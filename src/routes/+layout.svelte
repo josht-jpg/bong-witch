@@ -1,10 +1,18 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+  import TempMain from "$lib/images/temp-main.png"
 </script>
 
+
+<div class="background" >
 <div class="app">
 	<Header />
+
+<img src={TempMain} />
+
+
+	<!-- <Header />
 
 	<main>
 		<slot />
@@ -12,14 +20,20 @@
 
 	<footer>
 		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	</footer> -->
 </div>
-
+</div>
 <style>
+
+.background {
+	background-color: black;
+}
 	.app {
+		max-width: 735px;
+		margin: auto;
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		height: 100dvh;
 	}
 
 	main {

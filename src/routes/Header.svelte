@@ -1,129 +1,121 @@
 <script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+  import Logo from "$lib/images/logo-transparent.png"
 </script>
 
-<header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
-	</div>
+<header
+>
+<section class="top">
+<img src={Logo} class="logo" alt="bong witch" />
 
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
+<!-- <h3>Victoria, BC</h3> -->
+<!-- <img src={Logo} class="logo" alt="bong witch" /> -->
 
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
+
+<!-- <p class="number-of-the-beast">666</p> -->
+
+</section>
+<div>
+<div class="header-container" >
+<h1>Bong Witch</h1>
+</div>
+
+<div class="selects" >
+	<button style="  opacity: 85%;" >Lore</button>
+	<button style="  opacity: 85%;" >Merch</button>
+	<button style="  opacity: 85%;" >Contact</button>
+	<button style="  opacity: 85%;" >Listen</button>
+	<!-- <button>Shows</button> -->
+	<button style="margin-right: 8px;  opacity: 65%;">Shows</button>
 	</div>
+</div>
 </header>
 
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
 
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
 
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+.header-container {
+	text-align: end;
+}
+
+.selects {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	font-size: 20px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	column-gap: 14px;
+	/* padding-left: 8px;
+	padding-right: 8px; */
+
+	border-top: 2px solid rgba(0, 0, 0, .5);
+
+}
+
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+h1 {
+	opacity: 68%;
+	margin: 0;
+	font-size: 68px;
+	text-align: end;
+	margin-bottom: 4px;
+}
+
+h3 {
+	opacity: 50%;
+}
+
+.number-of-the-beast {
+	font-size: 14px;
+	margin-top: -10px;
+}
+
+.logo {
+	margin-right: -14px;
+	opacity: 80%;
+	display: block;
+	width: 62px;
+border-radius: 60px;
+margin-top: 0px;
+margin-left: 6px;
+
+
+}
+	.top {
 		width: 100%;
-		height: 100%;
-	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
-
-	nav {
+align-items: center;
+/* justify-content: flex-end; */
 		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		height: 40%;
+		/* border-bottom: 2px rgba(0, 0, 0, .5) solid; */
 	}
+	header {
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
+		flex-direction: column;
+		justify-content: space-between;
+		color: #000;
+		font-weight: 300;
+		padding-top:4px;
+		padding-bottom: 4px;
+
+	height: 25%;
+	background-image: url($lib/images/hb-69.png);
+	/* background-color: #c02a0f; */
+	/* border-top-right-radius: 14px;
+	border-top-left-radius: 14px; */
 	}
 
-	li {
-		position: relative;
-		height: 100%;
-	}
 
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
-	}
 </style>
