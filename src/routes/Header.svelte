@@ -1,5 +1,5 @@
 <script>
-  import Logo from "$lib/images/logo-transparent.png"
+  import Logo from "$lib/images/logo3.png"
 </script>
 
 <header
@@ -83,11 +83,12 @@ h3 {
 
 .logo {
 	margin-right: -14px;
-	opacity: 80%;
+	opacity: 70%;
 	display: block;
-	width: 62px;
+	width: 40px;
+	height: 50px;
 border-radius: 60px;
-margin-top: 0px;
+margin-top: -28px;
 margin-left: 6px;
 
 
